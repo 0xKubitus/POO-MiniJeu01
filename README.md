@@ -27,8 +27,11 @@ Quand on veut créer un objet Player, on ne met que son nom en entrée car le ni
 => "José"
 [3] pry(main)> player1.life_points
 => 10
+
 b) Player : afficher l'état d'un joueur avec show_state
-On sait que les joueurs vont se mettre sur la tronche et que donc leur niveau de vie va baisser. Donc on peut anticiper qu'il va falloir afficher à l'utilisateur l'état de chaque joueur pour qu'il sache ce qu'il se passe et comment le combat avance. Code une méthode show_state qui va afficher l'état de l'objet Player sur laquelle elle est exécutée : "XXXX a YYY points de vie".
+On sait que les joueurs vont se mettre sur la tronche et que donc leur niveau de vie va baisser. 
+Donc on peut anticiper qu'il va falloir afficher à l'utilisateur l'état de chaque joueur pour qu'il sache ce qu'il se passe et comment le combat avance. 
+Code une méthode show_state qui va afficher l'état de l'objet Player sur laquelle elle est exécutée : "XXXX a YYY points de vie".
 
 Tout comme dans l'exemple ci-dessus, cette méthode doit permettre d'obtenir le résultat suivant si on lance app.rb et qu'on utilise PRY:
 
@@ -37,8 +40,12 @@ Tout comme dans l'exemple ci-dessus, cette méthode doit permettre d'obtenir le 
 [2] pry(main)> player1.show_state
 José a 10 points de vie
 => nil
+
 c) Player : subir une attaque avec gets_damage
-A ce stade, on a notre base pour définir un objet Player. Passons maintenant à une méthode indispensable pour un combat : celle qui fait baisser le niveau de vie du joueur. En gros je veux pouvoir modéliser "le joueur stocké dans l'objet player1 subit 5 points de dommage" en faisant un player1.gets_damage(5).
+A ce stade, on a notre base pour définir un objet Player. 
+Passons maintenant à une méthode indispensable pour un combat :
+celle qui fait baisser le niveau de vie du joueur. 
+En gros je veux pouvoir modéliser "le joueur stocké dans l'objet player1 subit 5 points de dommage" en faisant un player1.gets_damage(5).
 
 Tu dois coder une méthode gets_damage qui prend en entrée un integer (= le nombre de dommages subit) et qui le soustraie au niveau de vie (@life_points) du joueur.
 
@@ -63,7 +70,9 @@ José a 0 points de vie
 Petite aide : pour ceux qui sont complètement perdus dans l'écriture de cette première méthode, son contenu est affiché ci-dessous en blanc sur blanc (surligne le texte avec ta souris pour l'afficher).
 
 ⚠️ATTENTION⚠️ : si tu as besoin de cette aide pour avancer, c'est que le concept d'objet et l'écriture des classes n'est pas du tout clair pour toi (pour le moment).
-Il est INTERDIT de copier-coller cette méthode dans ton code : je veux que tu y jettes un œil puis que tu essayes, sans la recopier, de l'écrire à nouveau dans ton code. Tu dois comprendre chaque ligne. 
+Il est INTERDIT de copier-coller cette méthode dans ton code : je veux que tu y jettes un œil puis que tu essayes, sans la recopier, de l'écrire à nouveau dans ton code. 
+Tu dois comprendre chaque ligne. 
+
 Ensuite, lance app.rb avec son binding.pry et fais plein de tests en créant 2 ou 3 objets Player différents, fais des show_state et des gets_damage dessus pour bien visualiser comment tout ça marche.
 
 Il n'y aura pas d'autre aide donc c'est important que tu saisisses MAINTENANT la logique. 
@@ -86,13 +95,17 @@ end
 -fin de l'aide-
 
 d) Player : attaquer avec attacks
-On est à présent capable de faire baisser les points de vie d'un joueur avec gets_damage. Il est temps de coder une méthode attacks qui permette de faire qu'un joueur attaque un autre. Ainsi, si le joueur player1 attaque le joueur player2, on aurait juste à taper player1.attacks(player2).
+On est à présent capable de faire baisser les points de vie d'un joueur avec gets_damage. 
+Il est temps de coder une méthode attacks qui permette de faire qu'un joueur attaque un autre. 
+Ainsi, si le joueur player1 attaque le joueur player2, on aurait juste à taper player1.attacks(player2).
 
 Code cette méthode en respectant ces contraintes :
 
 La méthode prend donc en entrée un objet Player qui est le joueur subissant l'attaque ;
 La méthode commence par annoncer "le joueur [nom de player1] attaque le joueur [nom de player2]" avec un puts ;
-Ensuite on doit calculer les dommages que player1 va faire subir à player2. Pour des raisons que tu comprendras plus tard, on va créer une méthode à part s'appelant compute_damage qui va faire ce calcul.
+Ensuite on doit calculer les dommages que player1 va faire subir à player2. 
+Pour des raisons que tu comprendras plus tard, on va créer une méthode à part s'appelant compute_damage qui va faire ce calcul.
+
 Et dans la pure tradition des jeux de rôle, les dommages seront aléatoires car égaux au résultat d'un lancé de dé (= un chiffre au hasard entre 1 et 6). 
 
 Voici le code de notre méthode compute_damage que tu vas mettre juste à la suite de attacks :

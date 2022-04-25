@@ -11,4 +11,21 @@ class Player
     @life_points = 10
   end # fin de la méthode 'initialize(name)'
 
+
+  #Code une méthode show_state qui va afficher l'état de l'objet 'Player'
+  #sur laquelle elle est exécutée : "XXXX a YYY points de vie".
+  def show_state
+    puts "#{name} possède #{life_points} PV."
+  end # fin de la méthode 'show_state'
+
+
+
+
+
+
+
+
+
+
+
 end # fin de la classe 'Player'
