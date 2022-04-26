@@ -12,7 +12,7 @@ class Player
 
   def attacks(playerY, playerX)
     puts " "
-    puts "BIIIM! #{@name} attaque #{playerY.name} :"
+    puts "        #{@name} attaque #{playerY.name} :"
     attack_dmg = compute_damage
     puts "  => l'attaque inflige #{attack_dmg} dégats !"
     puts " "
@@ -50,31 +50,34 @@ class HumanPlayer < Player
     @weapon_level = 1
   end
 
+
   def show_state
     print "-> #{name} a #{life_points} PV et une arme de niveau #{weapon_level}."
   end 
+
 
   def compute_damage
     rand(1..6) * @weapon_level
   end
 
+
   def search_weapon
     new_weapon_level = rand(1..6)
-    puts "Tiens, #{name} le roublard a trouvé une arme de niveau #{new_weapon_level} !"
+    puts "Tiens, #{name} a trouvé une arme de niveau #{new_weapon_level} !"
     if new_weapon_level > @weapon_level
-      puts "Cool, elle est plus puissante que son arme actuelle, il la prend !"
+      puts "T'as de la chance, elle est plus puissante que ton arme actuelle ! Du coup, tu la prends."
       @weapon_level = new_weapon_level
+      puts " "
+      puts "* * * * * * * * * * * * * * * * * * * * * * * * * * * * *"
+      puts " "
     else
-      puts "Fait ch*** ! elle n'est pas mieux que l'arme actuelle..."
+      puts "Sois pas deg ! Tu ne trouves rien de mieux que ce que tu as déja..."
+      puts " "
+      puts "* * * * * * * * * * * * * * * * * * * * * * * * * * * * *"
+      puts " "
     end
   end # fin de la méthode 'search_weapon'
     
-
-
-
-
-
-
 
   def search_health_pack
     search_hp_result = rand(1..6)
@@ -105,10 +108,6 @@ class HumanPlayer < Player
     show_state
 
   end # fin de la méthode 'search_health_pack'
-
-
-
-
 
 
 end # fin de la classe 'HumanPlayer'
