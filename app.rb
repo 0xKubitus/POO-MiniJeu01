@@ -12,7 +12,10 @@ puts player1.name
 puts " "
 p player1.show_state
 puts " "
-p player1.gets_damage(5)
+p player1.gets_damage(8)
 puts " "
 p player1.show_state
+puts " "
+p player1.gets_damage(5)
+puts " "
 
