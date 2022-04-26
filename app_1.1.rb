@@ -1,8 +1,8 @@
 require 'bundler'
 Bundler.require
 
-require_relative 'lib_2/player_2.0'
-require_relative 'lib_2/game_2.0'
+require_relative 'lib_1.1/player_1.1'
+require_relative 'lib_1.1/game_1.1'
 
 
 player_one = Player.new("Rick")
@@ -13,26 +13,6 @@ joueur2 = HumanPlayer.new("Goliath")
 
 
 #binding.pry
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-=begin
 
 puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 puts "            DAVID vs. GOLIATH"
@@ -75,7 +55,3 @@ while joueur1.life_points > 0 && joueur2.life_points > 0 # on fait une boucle wh
   puts "--------------------------------------------------"
   
 end
-
-=end
-
-

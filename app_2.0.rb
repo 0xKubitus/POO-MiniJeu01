@@ -1,53 +1,60 @@
 require 'bundler'
 Bundler.require
 
-require_relative 'lib_2.0/player_2.0'
-require_relative 'lib_2.0/game_2.0'
+require_relative 'lib_2/player_2.0'
+require_relative 'lib_2/game_2.0'
 
 
-player1 = Player.new("Rick")
-player2 = Player.new("Morty")
+player_one = Player.new("Rick")
+player_two = Player.new("Morty")
+
+joueur1 = HumanPlayer.new("David")
+joueur2 = HumanPlayer.new("Goliath")
 
 
+#binding.pry
+
+puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+puts "            DAVID vs. GOLIATH"
+puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 puts " "
-puts "START=>  Les joueurs sont : #{player1.name} et #{player2.name}"
+puts "Le pauvre #{joueur1.name} ne possède qu'une simple fronde et quelques caillous\n(arme basique - Niveau: #{joueur1.weapon_level})"
 puts " "
-puts "==========================================="
+joueur2.weapon_level = 3
+puts "Face à lui on retrouve le terrible #{joueur2.name} qui lui est armé d'Al-Battar\n(épée légendaire - Niveau: #{joueur2.weapon_level} - dont le nom signifie : 'l'épée des prophètes')"
 puts " "
-
-
-puts "Voici l'état de chaque joueur :"
-puts player1.show_state
-puts player2.show_state
-puts " "
-puts "==========================================="
+puts joueur1.show_state 
+puts joueur2.show_state
+puts "- _ - _ - _ - _ - _ - _ - _ - _ - _ - _ - _ - _ - _ - _ - _ - _ - _ - _ - _ - _ - "
 puts " "
 
-
-puts "MAINTENANT, PASSONS AU COMBAT !"
-puts "      _________________     "
-puts " "
-
-# binding.pry
-
-while player1.life_points > 0 && player2.life_points > 0 # on fait une boucle while pour faire un combat à mort 
+while joueur1.life_points > 0 && joueur2.life_points > 0 # on fait une boucle while pour faire un combat à mort 
   
-  player1.attacks(player2, player1)
+  joueur1.attacks(joueur2, joueur1)
   puts " "
   puts "- - - - - - - - - - - - - - - - - - - -"
   puts " "
 
-  if player2.life_points <= 0 || player1.life_points <= 0 # on 'break' la boucle dès qu'un joueur meurt 
+  if joueur2.life_points <= 0 || joueur1.life_points <= 0 # on 'break' la boucle dès qu'un joueur meurt 
     break
   end
 
-  player2.attacks(player1, player2)
+  joueur2.attacks(joueur1, joueur2)
   puts " "
-  puts "- - - - - - - - - - - - - - - - - - - -"
   puts " "
+  puts "--------------------------------------------------"
+  puts " "
+  joueur1.search_weapon
+  puts " "
+  joueur2.search_weapon #<= à ajouter pour remonter les chances de gagner de Goliath/joueur2
+  puts " "
+  joueur1.search_health_pack
+  puts " "
+  joueur2.search_health_pack #<= à ajouter pour remonter les chances de gagner de Goliath/joueur2
+  puts " "
+  puts "--------------------------------------------------"
   
 end
-
 
 
 
