@@ -24,10 +24,17 @@ puts " "
 
 # binding.pry
 
-while player1.life_points > 0 && player2.life_points >0 # on fait une boucle while pour faire un combat à mort 
-  player1.attacks(player2)
+while player1.life_points > 0 && player2.life_points > 0 # on fait une boucle while pour faire un combat à mort 
+  player1.attacks(player2, player1)
   puts " "
-  player2.attacks(player1)
+
+  if player2.life_points <= 0 || player1.life_points <= 0
+    break
+  end
+
+  player2.attacks(player1, player2)
+  puts " "
+  
 end
 
 
