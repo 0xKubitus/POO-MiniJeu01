@@ -5,12 +5,23 @@ require_relative 'lib_2/player_2.0'
 require_relative 'lib_2/game_2.0'
 
 
-player_one = Player.new("Rick")
-player_two = Player.new("Morty")
+puts "   
+puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+puts "               POO-LANTAH"
+puts "    SERAS-TU LE DERNIER SURVIVANT ?"
+puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+puts " "
+puts " "
+puts "    Quel es ton nom jeune aventurier(e) ?"
+print "> "
+user_name = gets.chomp
+puts " "
+puts " "
 
-joueur1 = HumanPlayer.new("David")
-joueur2 = HumanPlayer.new("Goliath")
-
+joueur1 = HumanPlayer.new(user_name)
+puts "Sois le/la bienvenu(e) sur lîle #{joueur1.name} ! J'espère que tu es prêt(e)..."
+puts "...car ici, tout le monde veut ta POO !!!"
+puts " "
 
 #binding.pry
 
@@ -34,10 +45,17 @@ joueur2 = HumanPlayer.new("Goliath")
 
 =begin
 
+player_one = Player.new("Rick")
+player_two = Player.new("Morty")
+
 puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 puts "            DAVID vs. GOLIATH"
 puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 puts " "
+
+joueur1 = HumanPlayer.new("David")
+joueur2 = HumanPlayer.new("Goliath")
+
 puts "Le pauvre #{joueur1.name} ne possède qu'une simple fronde et quelques caillous\n(arme basique - Niveau: #{joueur1.weapon_level})"
 puts " "
 joueur2.weapon_level = 3
