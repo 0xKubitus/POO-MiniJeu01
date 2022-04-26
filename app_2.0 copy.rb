@@ -27,7 +27,6 @@ puts joueur1.show_state
 puts joueur2.show_state
 puts "- _ - _ - _ - _ - _ - _ - _ - _ - _ - _ - _ - _ - _ - _ - _ - _ - _ - _ - _ - _ - "
 puts " "
-joueur1.attacks(joueur2, joueur1)
 
 while joueur1.life_points > 0 && joueur2.life_points > 0 # on fait une boucle while pour faire un combat à mort 
   
@@ -42,7 +41,12 @@ while joueur1.life_points > 0 && joueur2.life_points > 0 # on fait une boucle wh
 
   joueur2.attacks(joueur1, joueur2)
   puts " "
-  puts "- - - - - - - - - - - - - - - - - - - -"
   puts " "
+  puts "--------------------------------------------------"
+  puts " "
+  joueur1.search_weapon
+  #joueur2.search_weapon <= à ajouter pour remonter les chances de gagner de Goliath/joueur2
+  puts " "
+  puts "--------------------------------------------------"
   
 end
