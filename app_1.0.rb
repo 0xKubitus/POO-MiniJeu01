@@ -1,9 +1,7 @@
 require 'bundler'
 Bundler.require
 
-require_relative 'lib/game'
-require_relative 'lib/player'
-
+require_relative 'lib_1.0/player_1.0'
 
 
 player1 = Player.new("Rick")
@@ -25,10 +23,11 @@ puts " "
 # binding.pry
 
 while player1.life_points > 0 && player2.life_points > 0 # on fait une boucle while pour faire un combat à mort 
+  
   player1.attacks(player2, player1)
   puts " "
 
-  if player2.life_points <= 0 || player1.life_points <= 0
+  if player2.life_points <= 0 || player1.life_points <= 0 # on 'break' la boucle dès qu'un joueur meurt 
     break
   end
 
