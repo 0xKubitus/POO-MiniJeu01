@@ -68,6 +68,47 @@ class HumanPlayer < Player
       puts "Fait ch*** ! elle n'est pas mieux que l'arme actuelle..."
     end
   end # fin de la méthode 'search_weapon'
+    
+
+
+
+
+
+
+
+  def search_health_pack
+    search_hp_result = rand(1..6)
+
+    #Si le résultat est égal à 1, le joueur n'a rien trouvé et on retourne simplement le string "Tu n'as rien trouvé... "
+    if search_hp_result == 1
+      puts "Tu n'as rien trouvé..."
+
+    #Si le résultat est compris entre 2 (inclus) et 5 (inclus), le joueur a trouvé un pack de 50 points de vie.
+    #On va donc augmenter sa vie de 50 points
+    elsif search_hp_result >= 2 && search_hp_result <= 5
+      @life_points += 50
+      puts "Tu as trouvé une potion de santé (tu recupères +50 PV)."
+
+    #Si le résultat est égal à 6, le joueur a trouvé un pack de 80 points de vie. 
+    #On va donc augmenter sa vie de 80 points 
+    else 
+      @life_points += 80
+      puts "Tadaa! Tu viens de trouver un elixir magique ! (tu récupères +80 PV)."
+    end # fin du if/elsif/else
+
+    #On va faire en sorte que '@life_points' (la vie du joueur en question) ne dépasse pas 100:
+    lifepoints_verif = @life_points - 100
+    if lifepoints_verif > 0
+      @life_points -= lifepoints_verif
+    end # fin du if
+
+    show_state
+
+  end # fin de la méthode 'search_health_pack'
+
+
+
+
 
 
 end # fin de la classe 'HumanPlayer'

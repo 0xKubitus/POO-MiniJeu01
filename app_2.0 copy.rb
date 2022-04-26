@@ -45,7 +45,12 @@ while joueur1.life_points > 0 && joueur2.life_points > 0 # on fait une boucle wh
   puts "--------------------------------------------------"
   puts " "
   joueur1.search_weapon
-  #joueur2.search_weapon <= à ajouter pour remonter les chances de gagner de Goliath/joueur2
+  puts " "
+  joueur2.search_weapon #<= à ajouter pour remonter les chances de gagner de Goliath/joueur2
+  puts " "
+  joueur1.search_health_pack
+  puts " "
+  joueur2.search_health_pack #<= à ajouter pour remonter les chances de gagner de Goliath/joueur2
   puts " "
   puts "--------------------------------------------------"
   
