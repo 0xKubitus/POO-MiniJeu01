@@ -35,3 +35,18 @@ class Player
   end # fin de la méthode 'compute_damage'
   
 end # fin de la classe 'Player'
+
+
+#  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  
+
+
+class HumanPlayer < Player
+
+
+
+
+
+
+
+
+end # fin de la classe 'HumanPlayer'
