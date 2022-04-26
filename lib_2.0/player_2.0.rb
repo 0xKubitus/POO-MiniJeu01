@@ -41,11 +41,21 @@ end # fin de la classe 'Player'
 
 
 class HumanPlayer < Player
+  attr_accessor :weapon_level
 
+  def initialize(name)
+    @name = name  
+    @life_points = 100
+    @weapon_level = 1
+  end
 
+  def show_state
+    print "-> #{name} a #{life_points} PV et une arme de niveau #{weapon_level}."
+  end 
 
-
-
+  def compute_damage
+    rand(1..6) * @weapon_level
+  end
 
 
 
