@@ -7,7 +7,11 @@ class Player
   end # fin de la méthode 'initialize(name)'
 
   def show_state
-    print "-> #{name} a #{life_points} PV."
+    if @life_points > 0
+      print "-> #{name} a #{life_points} PV."
+    else
+      print "-> #{name} est mort. Tu ne le reverras pas de si tôt"
+    end
   end # fin de la méthode 'show_state'
 
   def attacks(playerY, playerX)
@@ -24,7 +28,7 @@ class Player
     puts "#{name} a perdu #{attack_dmg} PV suite à cette attaque !"
     show_state
     puts " "
-
+    
     if @life_points <= 0
       puts " "
       puts "Woopsie! #{name} s'est fait tuer ! (il n'etait pas très brave, le bougre !)"

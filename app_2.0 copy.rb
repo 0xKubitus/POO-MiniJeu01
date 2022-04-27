@@ -76,6 +76,28 @@ while human_player.life_points > 0 || (pnj1.life_points > 0 && pnj2.life_points 
   if user_choise == "2"
     human_player.attacks(pnj2, human_player)
   end
+
+  puts " "
+  puts "~ ~ ~ ~ ~ ~ ~ ~ ~"
+  puts "ATTENTION: Les PnJs t'attaquent !"
+  enemies.each do |pnj|
+    if pnj.life_points > 0
+      pnj.attacks(human_player, pnj)
+    end
+  end
+
+  puts "----------------------------------"
+  puts " "
+  puts " "
+  puts "CONTINUER LA PARTIE ?"
+  puts "Ecris 'o' pour continuer ou n'importe quoi d'autre pour quitter le jeu."
+  choice_to_continue = gets.chomp.downcase
+  if choice_to_continue != "o"
+    break
+  else
+    puts "OKAY, c'est parti pour le round suivant !"
+  end
+
 end
   
 
